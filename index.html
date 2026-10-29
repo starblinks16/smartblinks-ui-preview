@@ -1,99 +1,86 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#080b10" />
-  <meta name="description" content="SmartBlinks — interactive trading terminal prototype." />
-  <title>SmartBlinks — Trading Terminal Preview</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090c11">
+  <meta name="description" content="Explore the SmartBlinks trading intelligence interface in a safe, simulated preview.">
+  <title>SmartBlinks — Interface Preview</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <a class="brand" href="#" aria-label="SmartBlinks home">
-        <span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 34 11v18L20 37 6 29V11L20 3Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 25 19 12l3 9 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="15" r="2" fill="currentColor"/></svg></span>
+      <a class="brand" href="#overview" aria-label="SmartBlinks overview">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 3 34 11v18L20 37 6 29V11L20 3Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 25 19 12l3 9 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="15" r="2" fill="currentColor"/></svg></span>
         <span class="brand-word">SMART<span>BLINKS</span><small>TRADING INTELLIGENCE</small></span>
       </a>
       <div class="workspace-label">WORKSPACE <span>PREVIEW</span></div>
       <nav class="side-nav" aria-label="Main navigation">
-        <button class="nav-item active" data-page="overview"><span class="nav-icon">◫</span>Overview</button>
-        <button class="nav-item" data-page="markets"><span class="nav-icon">⌁</span>Markets</button>
-        <button class="nav-item" data-page="brain"><span class="nav-icon">◈</span>Brain</button>
-        <button class="nav-item" data-page="audit"><span class="nav-icon">≋</span>Audit trail</button>
-        <button class="nav-item" data-page="risk"><span class="nav-icon">⛨</span>Risk controls</button>
+        <button class="nav-item active" data-page="overview"><span class="nav-icon">◫</span><span>Overview</span></button>
+        <button class="nav-item" data-page="markets"><span class="nav-icon">⌁</span><span>Markets</span></button>
+        <button class="nav-item" data-page="brain"><span class="nav-icon">◈</span><span>Brain</span></button>
+        <button class="nav-item" data-page="audit"><span class="nav-icon">≋</span><span>Audit trail</span></button>
+        <button class="nav-item" data-page="risk"><span class="nav-icon">⛨</span><span>Risk controls</span></button>
       </nav>
       <div class="sidebar-bottom">
-        <div class="preview-note"><span class="status-dot"></span><div><b>Simulation environment</b><small>No broker connected</small></div></div>
-        <button class="nav-item" data-page="settings"><span class="nav-icon">⚙</span>Preferences</button>
-        <div class="sidebar-foot">SMART STRATEGY. BLINKS AHEAD.<br><span>BUILD 0.1 · INTERACTIVE PREVIEW</span></div>
+        <div class="preview-note"><span class="status-dot gold-dot"></span><div><b>Simulation environment</b><small>No broker connected</small></div></div>
+        <button class="nav-item" data-page="settings"><span class="nav-icon">⚙</span><span>Preferences</span></button>
+        <div class="sidebar-foot">SMART STRATEGY. BLINKS AHEAD.<br><span>INTERACTIVE UI PREVIEW</span></div>
       </div>
     </aside>
 
     <main class="main">
       <header class="topbar">
-        <div class="mobile-brand"><span class="brand-mark"><svg viewBox="0 0 40 40"><path d="M20 3 34 11v18L20 37 6 29V11L20 3Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 25 19 12l3 9 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>SMART<span>BLINKS</span></b></div>
+        <div class="mobile-brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 3 34 11v18L20 37 6 29V11L20 3Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 25 19 12l3 9 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>SMART<span>BLINKS</span></b></div>
         <div class="crumbs">Workspace <span>/</span> <b id="page-crumb">Overview</b></div>
         <div class="top-actions">
-          <span class="demo-badge"><i></i> DEMO ENVIRONMENT</span>
-          <button class="icon-button" id="sound-toggle" aria-label="Toggle interface sounds" title="Interface sounds">♫ <span id="sound-state">OFF</span></button>
-          <button class="avatar" aria-label="Preview profile">S</button>
+          <span class="demo-badge"><i></i> SIMULATED PREVIEW</span>
+          <button class="icon-button" id="sound-toggle" type="button" aria-pressed="false" aria-label="Enable interface sounds">♫ <span id="sound-state">SOUND OFF</span></button>
+          <button class="avatar" id="profile-button" type="button" aria-label="Preview profile">S</button>
         </div>
       </header>
 
       <section class="content">
         <div class="page-heading">
-          <div><div class="eyebrow">THURSDAY, OCTOBER 29 <span class="live-clock" id="clock">--:--:-- UTC</span></div><h1 id="page-title">Overview</h1><p id="page-subtitle">A clear view of your trading environment.</p></div>
-          <div class="connection-actions"><span class="connection-state" id="connection-state"><i></i><span>Disconnected</span></span><button class="button button-primary" id="connect-btn"><span class="button-symbol">↗</span> Connect demo</button></div>
+          <div><div class="eyebrow">SMARTBLINKS <span class="live-clock" id="clock">--:--:-- UTC</span></div><h1 id="page-title">Overview</h1><p id="page-subtitle">A clear view of your trading environment.</p></div>
+          <div class="connection-actions"><span class="connection-state" id="connection-state"><i></i><span>Simulation paused</span></span><button class="button button-primary" id="connect-btn" type="button"><span class="button-symbol">▶</span> Start simulation</button></div>
         </div>
 
-        <div class="simulation-banner" id="sim-banner"><span class="banner-icon">i</span><span><b>SIMULATED ACCOUNT</b> — All balances, prices and positions are illustrative. No broker orders are sent.</span><button id="banner-dismiss" aria-label="Dismiss notice">×</button></div>
+        <div class="simulation-banner" id="sim-banner" role="note"><span class="banner-icon">i</span><span><b>SIMULATED DATA</b> — Every quote, balance, signal and position is illustrative. Nothing connects to a broker or places real orders.</span><button id="banner-dismiss" type="button" aria-label="Dismiss notice">×</button></div>
 
-        <section class="metric-grid" aria-label="Account summary">
-          <article class="metric-card balance-card"><div class="metric-top"><span>Account balance</span><span class="metric-symbol">◉</span></div><div class="metric-value" id="balance">$10,000.00</div><div class="metric-foot"><span class="muted">Demo account · USD</span><span class="tiny-tag">SIMULATED</span></div></article>
-          <article class="metric-card"><div class="metric-top"><span>Equity</span><span class="metric-symbol">↗</span></div><div class="metric-value" id="equity">$10,000.00</div><div class="metric-foot"><span class="muted">Balance + floating P&amp;L</span></div></article>
-          <article class="metric-card"><div class="metric-top"><span>Floating P&amp;L</span><span class="metric-symbol">±</span></div><div class="metric-value positive" id="pnl">+$0.00</div><div class="metric-foot"><span class="muted">Open positions only</span><span class="pnl-change positive" id="pnl-percent">+0.00%</span></div></article>
-          <article class="metric-card"><div class="metric-top"><span>Open positions</span><span class="metric-symbol">⌗</span></div><div class="metric-value" id="position-count">0</div><div class="metric-foot"><span class="muted">Current simulated exposure</span><button class="text-action" id="open-position-btn">Open test position ↗</button></div></article>
-        </section>
+        <div id="page-content" aria-live="off"></div>
 
-        <section class="primary-grid">
-          <article class="panel chart-panel">
-            <div class="panel-header"><div><div class="panel-kicker">MARKET OVERVIEW <span class="subtle-separator">/</span> SIMULATED FEED</div><h2>Price action</h2></div><div class="chart-tools"><select id="symbol-select" aria-label="Select market"><option value="XAUUSD">XAUUSD</option><option value="EURUSD">EURUSD</option><option value="GBPUSD">GBPUSD</option></select><div class="segmented" role="group" aria-label="Chart timeframe"><button class="timeframe active" data-time="15m">15m</button><button class="timeframe" data-time="1h">1H</button><button class="timeframe" data-time="4h">4H</button></div></div></div>
-            <div class="instrument-line"><div><strong id="chart-symbol">XAUUSD</strong><span class="instrument-name" id="instrument-name">Gold / US Dollar</span></div><div class="quote"><strong id="market-price">2,746.82</strong><span id="market-change" class="positive">+0.42%</span></div></div>
-            <div class="chart-wrap"><canvas id="price-chart" aria-label="Illustrative simulated market price chart"></canvas><div class="chart-tooltip" id="chart-tooltip">SIMULATED PRICE FEED</div></div>
-            <div class="chart-footer"><span><i class="legend-line"></i>Price</span><span>Illustrative market data</span><span id="chart-time">Updated just now</span></div>
-          </article>
-          <article class="panel monitoring-panel">
-            <div class="panel-header"><div><div class="panel-kicker">SYSTEM STATUS</div><h2>Monitoring</h2></div><span class="monitor-icon">⌁</span></div>
-            <div class="monitor-status"><span class="status-ring"><span>✓</span></span><div><b id="monitor-title">Ready to connect</b><p id="monitor-desc">The demo environment is standing by.</p></div></div>
-            <div class="monitor-list">
-              <div class="monitor-row"><span>Market data</span><b><i class="status-dot gray" id="feed-dot"></i><span id="feed-status">Standby</span></b></div>
-              <div class="monitor-row"><span>Risk gate</span><b><i class="status-dot"></i><span>Enabled</span></b></div>
-              <div class="monitor-row"><span>Order execution</span><b><i class="status-dot gray" id="execution-dot"></i><span id="execution-status">Simulation only</span></b></div>
-            </div>
-            <button class="button button-secondary full-width" data-navigate="risk">Review risk controls <span>→</span></button>
-          </article>
-        </section>
-
-        <section class="panel positions-panel">
-          <div class="panel-header"><div><div class="panel-kicker">ACCOUNT ACTIVITY</div><h2>Open positions <span class="count-pill" id="position-pill">0</span></h2></div><button class="button button-secondary small-button" id="add-position-btn">＋ Test position</button></div>
-          <div class="table-scroll"><table><thead><tr><th>INSTRUMENT</th><th>DIRECTION</th><th>VOLUME</th><th>ENTRY PRICE</th><th>MARK PRICE</th><th>UNREALIZED P&amp;L</th><th></th></tr></thead><tbody id="positions-body"><tr class="empty-row"><td colspan="7"><div class="empty-state"><span class="empty-icon">⌁</span><b>No open positions</b><p>Connect the demo or add a test position to explore the interface.</p><button class="text-action" id="empty-add-btn">Add simulated position →</button></div></td></tr></tbody></table></div>
-        </section>
-
-        <section class="lower-grid">
-          <article class="panel activity-panel"><div class="panel-header"><div><div class="panel-kicker">EVENT STREAM</div><h2>Recent activity</h2></div><button class="text-action" data-navigate="audit">View audit trail →</button></div><div class="activity-list" id="activity-list"><div class="activity-item"><span class="activity-marker neutral">•</span><div><b>Preview environment initialized</b><p>Simulation is ready. No live account is connected.</p><small>JUST NOW</small></div></div><div class="activity-item"><span class="activity-marker gold">◇</span><div><b>Risk gate armed</b><p>Simulated orders require explicit user action.</p><small>ON STARTUP</small></div></div></div></article>
-          <article class="panel risk-summary"><div class="panel-header"><div><div class="panel-kicker">PRE-TRADE CHECKS</div><h2>Risk gate</h2></div><span class="check-badge">● ACTIVE</span></div><div class="risk-check"><span class="checkmark">✓</span><div><b>Market session</b><small>Simulated session available</small></div><span class="check-result">PASS</span></div><div class="risk-check"><span class="checkmark">✓</span><div><b>Data feed</b><small id="risk-feed-detail">Waiting for demo connection</small></div><span class="check-result" id="risk-feed-result">READY</span></div><div class="risk-check"><span class="checkmark">✓</span><div><b>Position sizing</b><small>Test orders use preset volume</small></div><span class="check-result">PASS</span></div></article>
-        </section>
-        <footer class="page-footer"><span>SMARTBLINKS <span class="footer-sep">/</span> INTERACTIVE PREVIEW</span><span>SIMULATED DATA · NOT A LIVE TRADING ACCOUNT</span></footer>
+        <footer class="page-footer"><span>SMARTBLINKS <span class="footer-sep">/</span> INTERACTIVE PREVIEW</span><span>SIMULATED DATA · NO LIVE TRADING CONNECTION</span></footer>
       </section>
     </main>
-    <nav class="mobile-nav" aria-label="Mobile navigation"><button class="mobile-nav-item active" data-page="overview"><span>◫</span>Overview</button><button class="mobile-nav-item" data-page="markets"><span>⌁</span>Markets</button><button class="mobile-nav-item" data-page="brain"><span>◈</span>Brain</button><button class="mobile-nav-item" data-page="audit"><span>≋</span>Audit</button><button class="mobile-nav-item" data-page="risk"><span>⛨</span>Risk</button></nav>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <button class="mobile-nav-item active" data-page="overview"><span>◫</span>Overview</button>
+      <button class="mobile-nav-item" data-page="markets"><span>⌁</span>Markets</button>
+      <button class="mobile-nav-item" data-page="brain"><span>◈</span>Brain</button>
+      <button class="mobile-nav-item" data-page="audit"><span>≋</span>Audit</button>
+      <button class="mobile-nav-item" data-page="risk"><span>⛨</span>Risk</button>
+    </nav>
   </div>
-  <div class="toast-region" id="toast-region" aria-live="polite"></div>
-  <dialog class="position-dialog" id="position-dialog"><form method="dialog"><div class="dialog-head"><div><span class="panel-kicker">SIMULATED ORDER</span><h2>Open test position</h2></div><button class="dialog-close" aria-label="Close">×</button></div><p class="dialog-copy">This creates a local-only demo position. No broker API is called and no real order is placed.</p><label>Instrument<select id="order-symbol"><option>XAUUSD</option><option>EURUSD</option><option>GBPUSD</option></select></label><label>Direction<div class="direction-choice"><button type="button" class="direction-btn active" data-side="BUY">Buy</button><button type="button" class="direction-btn" data-side="SELL">Sell</button></div></label><label>Volume<select id="order-volume"><option value="0.01">0.01 lots</option><option value="0.05">0.05 lots</option><option value="0.10">0.10 lots</option></select></label><div class="dialog-actions"><button class="button button-secondary" value="cancel">Cancel</button><button class="button button-primary" id="confirm-position" value="default">Open simulated position</button></div></form></dialog>
+
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+  <dialog class="position-dialog" id="position-dialog" aria-labelledby="dialog-title">
+    <form id="position-form">
+      <div class="dialog-head"><div><span class="panel-kicker">LOCAL SIMULATION</span><h2 id="dialog-title">Open test position</h2></div><button class="dialog-close" id="dialog-close" type="button" aria-label="Close dialog">×</button></div>
+      <p class="dialog-copy">This creates a local-only demo position so you can test the interface. No broker API is called and no real order is placed.</p>
+      <label>Instrument<select id="order-symbol"><option value="XAUUSD">XAUUSD · Gold</option><option value="EURUSD">EURUSD · Euro</option><option value="GBPUSD">GBPUSD · Pound</option></select></label>
+      <label>Direction<div class="direction-choice"><button type="button" class="direction-btn active" data-side="BUY" aria-pressed="true">Buy</button><button type="button" class="direction-btn" data-side="SELL" aria-pressed="false">Sell</button></div></label>
+      <label>Volume<select id="order-volume"><option value="0.01">0.01 lots</option><option value="0.05">0.05 lots</option><option value="0.10">0.10 lots</option></select></label>
+      <div class="order-preview" id="order-preview"><span>Indicative entry</span><b id="order-entry">—</b></div>
+      <div class="dialog-actions"><button class="button button-secondary" id="dialog-cancel" type="button">Cancel</button><button class="button button-primary" id="confirm-position" type="submit">Open simulated position</button></div>
+    </form>
+  </dialog>
+
   <script src="./app.js"></script>
 </body>
 </html>
