@@ -131,3 +131,6 @@
  .levels-cell{font-size:6.5px!important}
 }
 @media(prefers-reduced-motion:reduce){.bottom-nav button.active:after{box-shadow:none}}
+
+.tier-icon svg{width:29px;height:29px;display:block}.metric-icon svg{width:19px;height:19px;display:block}.insight-icon svg{width:22px;height:22px;display:block}.brain-orbit svg{width:44px;height:44px;display:block}
+@media(max-width:700px){.tier-icon svg{width:23px;height:23px}.metric-icon svg{width:16px;height:16px}.insight-icon svg{width:19px;height:19px}.brain-orbit svg{width:34px;height:34px}}
