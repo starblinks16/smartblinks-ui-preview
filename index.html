@@ -1,72 +1,51 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#080D18">
-<title>SmartBlinks</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050D1D"><title>SmartBlinks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<script src="https://unpkg.com/lightweight-charts@4.2.2/dist/lightweight-charts.standalone.production.js"></script>
+<link rel="stylesheet" href="styles.css"><script src="https://unpkg.com/lightweight-charts@4.2.2/dist/lightweight-charts.standalone.production.js"></script>
 </head>
-<body>
-<main class="app">
+<body><main class="app">
 <header class="identity">
-  <div class="identity-left">
-    <span class="tier-icon founder" aria-hidden="true">♛</span>
-    <div><div class="tier-line"><strong>FOUNDER</strong><span class="active"><i></i> ACTIVE</span></div><div class="username">@starblinks</div></div>
-  </div>
-  <div class="license"><small>LICENSE</small><b>FOUNDER</b><span>LIFETIME ACCESS</span></div>
-  <div class="trading-state"><i></i><span><b>TRADING ENABLED</b><small>Account active</small></span></div>
+ <div class="identity-left"><span class="tier-icon" id="tier-icon" aria-hidden="true">♛</span><div class="identity-copy"><div class="tier-line"><strong id="tier">FOUNDER</strong></div><div class="username" id="username">@starblinks</div></div></div>
+ <div class="license">License: <b id="license">FOUNDER</b></div>
+ <div class="trading-state"><i></i><span><b>Trading Enabled</b><small>Account Active</small></span></div>
 </header>
-
-<section class="account">
-  <div class="section-head"><div><small>ACCOUNT OVERVIEW</small></div><span class="asof">TODAY</span></div>
-  <div class="account-main">
-    <div class="equity"><small>EQUITY</small><strong id="equity">$10,263.76</strong><span id="equity-delta">+$15.44 floating</span></div>
-    <div class="account-stats">
-      <div><small>BALANCE</small><strong id="balance">$10,248.32</strong><span class="up">↗ +2.64% <em>this month</em></span></div>
-      <div><small>P&amp;L TODAY</small><strong class="up" id="pnl">+$15.44</strong><span class="up">↗ +1.24% <em>today</em></span></div>
-    </div>
-  </div>
-  <div class="account-foot">
-    <div><small>USED MARGIN</small><b id="used-margin">$186.40</b></div>
-    <div><small>FREE MARGIN</small><b id="free-margin">$10,077.36</b></div>
-    <div><small>OPEN POSITIONS</small><b id="open-count">02 <em>positions</em></b></div>
-    <div class="margin-bar"><i></i></div>
-  </div>
+<section class="account" aria-label="Account overview">
+ <div class="metric"><div class="metric-label"><span class="metric-icon">▤</span> BALANCE <span style="font-size:12px;color:#9bbfe4">ⓘ</span></div><strong class="metric-value" id="balance">$1,248.32</strong><span class="metric-change">+ $32.18&nbsp; (+2.64%) ▲</span></div>
+ <div class="equity-wrap"><div class="equity-ring"><small>EQUITY</small><strong id="equity">$1,263.76</strong><span id="equity-change">▲ +2.71%</span></div></div>
+ <div class="right-metrics">
+  <div class="right-metric"><span class="metric-icon">↗</span><div><small>P&amp;L (Today)</small><b class="positive" id="pnl">+$15.44</b></div></div>
+  <div class="right-metric"><span class="metric-icon">▤</span><div><small>Open Positions</small><b id="open-count">2</b></div></div>
+ </div>
 </section>
-
 <section class="markets">
-  <button class="market active" data-symbol="XAUUSD"><span class="market-top"><span class="asset gold">◆</span><span><b>XAUUSD</b><small>GOLD · M15</small></span><span class="live"><i></i> LIVE</span></span><span class="quote"><b id="gold-price">2,742.36</b><em class="up" id="gold-change">+1.24%</em></span><svg class="spark" viewBox="0 0 130 30"><path d="M1 24 10 19 17 22 25 12 33 17 41 10 49 15 57 7 66 13 74 5 83 10 91 6 100 9 109 3 118 6 129 1"/></svg></button>
-  <button class="market" data-symbol="EURUSD"><span class="market-top"><span class="asset euro">€</span><span><b>EURUSD</b><small>EURO · M15</small></span><span class="live"><i></i> LIVE</span></span><span class="quote"><b id="euro-price">1.05382</b><em class="up" id="euro-change">+0.76%</em></span><svg class="spark blue" viewBox="0 0 130 30"><path d="M1 25 10 22 18 24 27 16 35 19 43 12 52 16 60 9 69 13 77 7 86 11 95 5 104 9 113 3 121 6 129 1"/></svg></button>
+ <button class="market active" data-symbol="XAUUSD"><span class="asset-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M4 26 13 11h12l-9 15H4Zm14 0 9-15h12l-9 15H18Zm-9 3h13l-7 11H2l7-11Zm16 0h13l-7 11H18l7-11Z" fill="#F5C65E" stroke="#FFE39A" stroke-width="1.3" stroke-linejoin="round"/></svg></span><span class="market-info"><span class="market-title">XAUUSD <small class="timeframe">M15</small></span><span class="market-price" id="gold-price">2,742.36</span><span class="market-change" id="gold-change">+1.24%</span></span><svg class="spark" viewBox="0 0 130 45"><path d="M1 39 9 31 17 34 24 22 32 29 40 18 49 22 57 11 66 17 74 8 83 13 92 5 101 11 109 4 119 8 129 1"/></svg><span style="color:#8bb8e4;font-size:23px">›</span></button>
+ <button class="market" data-symbol="EURUSD"><span class="asset-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><defs><clipPath id="flagClip"><circle cx="24" cy="24" r="22"/></clipPath></defs><g clip-path="url(#flagClip)"><rect width="48" height="48" fill="#fff"/><path fill="#D9273E" d="M0 0h48v5H0zm0 10h48v5H0zm0 10h48v5H0zm0 10h48v5H0zm0 10h48v5H0z"/><path fill="#21468B" d="M0 0h22v26H0z"/><g fill="#fff" font-size="4"><text x="3" y="6">★ ★ ★</text><text x="3" y="12">★ ★ ★</text><text x="3" y="18">★ ★ ★</text><text x="3" y="24">★ ★ ★</text></g></g><circle cx="24" cy="24" r="22" fill="none" stroke="#5289d0" stroke-width="1.5"/></svg></span><span class="market-info"><span class="market-title">EURUSD <small class="timeframe">M15</small></span><span class="market-price" id="euro-price">1.0538</span><span class="market-change" id="euro-change">+0.76%</span></span><svg class="spark" viewBox="0 0 130 45"><path d="M1 39 9 34 17 37 24 26 32 30 40 22 49 26 57 16 66 20 74 12 83 17 92 8 101 12 109 6 119 9 129 1"/></svg><span style="color:#8bb8e4;font-size:23px">›</span></button>
 </section>
-
-<section class="panel chart-panel">
-  <div class="panel-head"><div><small>MARKET CHART</small><h2 id="chart-title">XAUUSD <span>M15</span></h2></div><div class="chart-actions"><button class="symbol-choice selected" data-chart-symbol="XAUUSD">XAUUSD</button><button class="symbol-choice" data-chart-symbol="EURUSD">EURUSD</button></div></div>
-  <div class="ohlc"><span>O <b id="ohlc-o">2,741.82</b></span><span>H <b id="ohlc-h">2,743.11</b></span><span>L <b id="ohlc-l">2,740.96</b></span><span>C <b id="ohlc-c">2,742.36</b></span><b class="up" id="ohlc-delta">+0.54 (+0.02%)</b></div>
-  <div class="chart-wrap"><div id="chart"></div></div>
-  <div class="legend"><span><i class="bull"></i>Bullish</span><span><i class="bear"></i>Bearish</span><span><i class="tp"></i>Take profit</span><span><i class="sl"></i>Stop loss</span></div>
+<section class="chart-panel">
+ <div class="panel-head"><div class="chart-heading"><span class="chart-symbol-icon">↗</span><strong id="chart-title">XAUUSD</strong><select id="timeframe"><option>M15</option><option>M5</option><option>H1</option></select></div><div style="display:flex;align-items:center;gap:8px"><span class="live-pill"><i></i> Live</span><button class="expand" aria-label="Expand chart">⛶</button></div></div>
+ <div class="chart-meta"><span id="chart-subtitle">XAUUSD · 15 · cTrader</span><br>O&nbsp; <b id="ohlc-o">2741.82</b>&nbsp; H&nbsp; <b id="ohlc-h">2743.11</b>&nbsp; L&nbsp; <b id="ohlc-l">2740.96</b>&nbsp; C&nbsp; <b id="ohlc-c">2742.36</b>&nbsp; <b>+0.54 (+0.02%)</b></div>
+ <div class="chart-wrap"><div id="chart"></div></div>
 </section>
-
-<section class="panel positions">
-  <div class="panel-head"><div><small>BROKER ACTIVITY</small><h2>Open positions <span class="count" id="position-count">02</span></h2></div></div>
-  <div class="position-list">
-    <article class="position"><div class="pos-instrument"><span class="asset gold">◆</span><span><b>XAUUSD</b><small>BUY · 0.10 lots</small></span></div><div><small>ENTRY / CURRENT</small><b>2,738.50 <em id="gold-current">→ 2,742.36</em></b></div><div class="levels"><small>SL <b class="down">2,730.00</b></small><small>TP <b class="up">2,755.00</b></small></div><div class="profit"><b class="up" id="gold-pnl">+$38.60</b><small>+3.54%</small></div></article>
-    <article class="position"><div class="pos-instrument"><span class="asset euro">€</span><span><b>EURUSD</b><small>SELL · 0.10 lots</small></span></div><div><small>ENTRY / CURRENT</small><b>1.05520 <em id="euro-current">→ 1.05382</em></b></div><div class="levels"><small>SL <b class="down">1.05800</b></small><small>TP <b class="up">1.04900</b></small></div><div class="profit"><b class="up" id="euro-pnl">+$14.00</b><small>+1.32%</small></div></article>
-  </div>
+<section class="positions">
+ <div class="panel-head"><div class="positions-title"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 10h22v17H5zM10 10V6a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v4M5 16h22M13 16v3h6v-3" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linejoin="round"/></svg> OPEN POSITIONS</div><span class="position-count">2 positions</span></div>
+ <div style="overflow-x:auto"><table class="position-table"><thead><tr><th>Symbol</th><th>Type</th><th>Volume</th><th>Entry Price</th><th>Current Price</th><th>P&amp;L</th><th>SL / TP</th><th></th></tr></thead><tbody>
+ <tr><td><span class="position-symbol"><span class="asset-icon"><svg viewBox="0 0 48 48"><path d="M4 26 13 11h12l-9 15H4Zm14 0 9-15h12l-9 15H18Zm-9 3h13l-7 11H2l7-11Zm16 0h13l-7 11H18l7-11Z" fill="#F5C65E" stroke="#FFE39A" stroke-width="1.3"/></svg></span>XAUUSD</span></td><td><span class="side">BUY</span></td><td>0.10</td><td>2,738.50</td><td id="gold-current">2,742.36</td><td class="positive" id="gold-pnl">+$38.60<br>(+3.54%)</td><td class="levels-cell"><span class="sl">2,730.00&nbsp; SL</span><br><span class="tp">2,755.00&nbsp; TP</span></td><td>›</td></tr>
+ <tr><td><span class="position-symbol"><span class="asset-icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#123d7a" stroke="#5289d0"/><path d="M2 12h44M2 21h44M2 30h44M2 39h44" stroke="#fff" stroke-width="4"/><path d="M2 2h23v24H2z" fill="#21468B"/></svg></span>EURUSD</span></td><td><span class="side sell">SELL</span></td><td>0.10</td><td>1.0552</td><td id="euro-current">1.0538</td><td class="positive" id="euro-pnl">+$14.00<br>(+1.32%)</td><td class="levels-cell"><span class="sl">1.0580&nbsp; SL</span><br><span class="tp">1.0490&nbsp; TP</span></td><td>›</td></tr>
+ </tbody></table></div>
 </section>
-
 <section class="insights">
-  <article class="panel intelligence"><div class="insight-head"><span class="brain-icon">✧</span><div><small>SYSTEM MONITOR</small><h2>AI intelligence</h2></div><span class="active"><i></i> ACTIVE</span></div><p>Monitoring market data and system conditions.</p><div class="monitor"><span><i></i> Market feed</span><b>CONNECTED</b><span><i></i> Risk monitor</span><b>READY</b></div><button class="text-link" data-action="brain">Explore intelligence <b>→</b></button></article>
-  <article class="panel market-intel"><div class="insight-head"><span class="news-icon">▤</span><div><small>MARKET CONTEXT</small><h2>Market intelligence</h2></div><button class="text-link" data-action="news">View ↗</button></div><div class="news-row"><i class="amber"></i><span>US inflation data ahead — volatility watch</span><small>14m</small></div><div class="news-row"><i class="green"></i><span>Gold holds above near-term support</span><small>32m</small></div><div class="news-row"><i class="cyan"></i><span>EURUSD tests intraday resistance</span><small>1h</small></div></article>
+ <article class="insight"><div class="insight-head"><span class="insight-icon">♧</span><strong>AI INTELLIGENCE</strong><button class="view" data-tab="Brain">View ›</button></div><span class="brain-orbit">♧</span><div class="monitor-row"><i></i> Monitoring markets 24/7</div><p>Analyzing price action, news, and market conditions to find high-probability opportunities.</p></article>
+ <article class="insight"><div class="insight-head"><span class="insight-icon" style="color:#47baff;border-color:#176aa0">▤</span><strong>MARKET INTELLIGENCE</strong><button class="view" data-tab="More">View ›</button></div><div class="news-list"><div class="news-item"><i style="background:#ff4772"></i><span>U.S. CPI Data Ahead – Watch for Volatility</span><small>2h ago</small> ›</div><div class="news-item"><i style="background:#00d9ae"></i><span>Gold Climbs as Dollar Weakens</span><small>4h ago</small> ›</div><div class="news-item"><i style="background:#168dff"></i><span>EURUSD Holds Above 1.0500 Support</span><small>6h ago</small> ›</div></div></article>
 </section>
-
-<nav class="bottom-nav" aria-label="Mini App navigation"><button class="active" data-tab="Dashboard"><span>⌂</span>Dashboard</button><button data-tab="Brain"><span>✧</span>Brain</button><button data-tab="Audit"><span>▤</span>Audit</button><button data-tab="Risk"><span>◇</span>Risk</button><button data-tab="More"><span>▦</span>More</button></nav>
-</main>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script src="app.js"></script>
-</body>
-</html>
+<nav class="bottom-nav" aria-label="Mini App navigation">
+ <button class="active" data-tab="Dashboard"><svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v10h-6v-7H9v7H3z" fill="currentColor" stroke="none"/></svg>Dashboard</button>
+ <button data-tab="Brain"><svg viewBox="0 0 24 24"><path d="M12 4c-3-3-7 0-6 4-3 2-2 7 1 8 0 4 4 5 5 2V5m0 0c3-3 7 0 6 4 3 2 2 7-1 8 0 4-4 5-5 2M9 9l3 2 3-2m-6 6 3-2 3 2"/></svg>Brain</button>
+ <button data-tab="Audit"><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"/></svg>Audit</button>
+ <button data-tab="Risk"><svg viewBox="0 0 24 24"><path d="M12 2 21 6v6c0 5-4 8-9 10-5-2-9-5-9-10V6zM8 12l3 3 5-6"/></svg>Risk</button>
+ <button data-tab="More"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>More</button>
+</nav></main>
+<script src="https://telegram.org/js/telegram-web-app.js"></script><script src="app.js"></script></body></html>
