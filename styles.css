@@ -5,3 +5,129 @@
 @media(max-width:700px){.app{padding:calc(9px + var(--safe-top)) 9px calc(12px + var(--safe-bottom))}.identity{min-height:78px;padding:9px 10px;gap:8px;border-radius:12px}.tier-icon{width:42px;height:42px;font-size:23px}.identity-left{gap:9px}.tier-line strong{font-size:12px;letter-spacing:1px}.username{font-size:13px}.license{padding:7px 8px;font-size:9px}.trading-state{gap:6px;padding-left:9px}.trading-state i{width:7px;height:7px}.trading-state b{font-size:8px}.trading-state small{font-size:8px}.account{grid-template-columns:1fr 1fr 1fr;min-height:150px;gap:4px;margin-top:11px;padding:12px 8px;border-radius:14px}.metric{gap:4px}.metric-label{gap:5px;font-size:9px}.metric-icon{width:29px;height:29px;font-size:15px}.metric-value{font-size:clamp(13px,4vw,21px);letter-spacing:-.5px}.metric-change{font-size:8px}.equity-ring{width:clamp(92px,28vw,130px);height:clamp(92px,28vw,130px);border-width:6px}.equity-ring:before{inset:-10px}.equity-ring small{font-size:9px}.equity-ring strong{margin:4px 0;font-size:clamp(14px,4.3vw,20px)}.equity-ring span{font-size:9px}.right-metrics{gap:12px}.right-metric{gap:6px}.right-metric .metric-icon{width:30px;height:30px;font-size:15px}.right-metric small{font-size:8px}.right-metric b{font-size:14px}.markets{gap:8px;margin:10px 0}.market{gap:7px;padding:8px;border-radius:12px}.asset-icon{width:35px;height:35px}.asset-icon svg{width:29px;height:29px}.market-title{gap:5px;font-size:10px}.timeframe{padding:2px 5px;font-size:8px}.market-price{font-size:14px}.market-change{font-size:9px}.spark{width:25%;height:28px}.panel-head{padding:9px 10px}.chart-heading{gap:7px}.chart-symbol-icon{width:31px;height:29px;font-size:17px}.chart-heading strong{font-size:12px}.chart-heading select{font-size:9px;margin-left:3px;padding:3px}.live-pill{padding:4px 6px;font-size:8px}.live-pill i{width:6px;height:6px}.expand{font-size:16px}.chart-meta{padding:8px 11px 0;font-size:9px}.chart-wrap{height:clamp(220px,65vw,300px);padding:0 2px 4px}.positions .panel-head{padding:9px 10px}.positions-title{gap:7px;font-size:11px}.positions-title svg{width:25px;height:25px}.position-count{padding:4px 6px;font-size:8px}.position-table th{padding:8px 5px;font-size:8px}.position-table td{padding:9px 5px;font-size:9px}.position-symbol{gap:5px}.position-symbol .asset-icon{width:26px;height:26px}.position-symbol .asset-icon svg{width:21px;height:21px}.side{padding:4px 7px;font-size:8px}.levels-cell{font-size:8px!important}.insights{grid-template-columns:1fr;gap:9px}.insight{padding:10px 11px;border-radius:13px}.insight-head{gap:8px;padding-bottom:8px}.insight-icon{width:31px;height:31px;font-size:17px}.insight-head strong{font-size:11px}.view{font-size:9px}.monitor-row{margin:8px 0 5px;font-size:9px}.monitor-row i{width:6px;height:6px}.insight p{font-size:9px}.brain-orbit{width:58px;height:58px;font-size:24px}.news-item{gap:6px;padding:6px 0;font-size:9px}.news-item small{font-size:8px}.bottom-nav{margin:11px -2px 0;padding:8px 3px 7px;border-radius:17px}.bottom-nav button{gap:3px;font-size:8px}.bottom-nav button svg{width:21px;height:21px}.bottom-nav button.active:after{bottom:-7px;height:3px}}
 @media(max-width:360px){.identity{gap:5px;padding:8px 7px}.tier-icon{width:34px;height:34px;font-size:19px}.tier-line strong{font-size:10px}.username{font-size:11px}.license{padding:6px;font-size:8px}.trading-state{gap:4px;padding-left:6px}.trading-state b{font-size:7px}.trading-state small{font-size:7px}.market{padding:7px 5px}.market-title{font-size:9px}.timeframe{font-size:7px}.position-table th{font-size:7px}.position-table td{font-size:8px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* Reference-match refinement: preserve the reference's spacious hierarchy on phones. */
+.app{max-width:1024px}
+.identity,.account,.market,.chart-panel,.positions,.insight{border-width:1px}
+.identity{border-radius:18px}
+.account{border-radius:22px}
+.market{border-radius:20px}
+.chart-panel,.positions{border-radius:20px;overflow:hidden}
+.market-price{display:inline-block}
+.market-change{display:inline-block;margin-left:4px}
+.market .spark{width:26%;min-width:48px}
+.chart-meta{line-height:1.7}
+.chart-wrap{height:clamp(300px,38vw,390px)}
+.position-table{table-layout:fixed}
+.position-table th,.position-table td{overflow:hidden;text-overflow:clip}
+.position-table th:last-child,.position-table td:last-child{display:none}
+.levels-cell{white-space:normal!important}
+.insights{align-items:stretch}
+.insight{border-radius:18px}
+.insight-head strong{font-size:15px}
+.news-item{font-size:13px}
+.bottom-nav{position:relative;bottom:auto;margin-top:16px}
+.tier-icon{clip-path:none;border-radius:50%;position:relative}
+.tier-icon:after{content:"";position:absolute;inset:4px;border:1px solid #e8c66f;border-radius:50%;opacity:.55}
+.metric-label .metric-icon{flex:none}
+.chart-symbol-icon{border-radius:10px}
+@media(max-width:700px){
+ .app{padding:calc(9px + var(--safe-top)) 9px calc(14px + var(--safe-bottom))}
+ .identity{min-height:78px;padding:10px 11px;border-radius:14px;gap:8px}
+ .tier-icon{width:42px;height:42px;font-size:22px}
+ .identity-left{gap:9px}
+ .tier-line strong{font-size:12px;letter-spacing:1.1px}
+ .username{font-size:13px}
+ .license{padding:7px 8px;font-size:9px;border-radius:11px}
+ .trading-state{padding-left:8px;gap:6px}
+ .trading-state b{font-size:8px}
+ .trading-state small{font-size:8px}
+ .account{min-height:150px;margin-top:11px;padding:12px 8px;gap:4px;border-radius:15px}
+ .metric{gap:5px}
+ .metric-label{gap:5px;font-size:9px;white-space:nowrap}
+ .metric-icon{width:30px;height:30px;font-size:15px}
+ .metric-value{font-size:clamp(15px,4.2vw,21px)}
+ .metric-change{font-size:8px;white-space:nowrap}
+ .equity-ring{width:clamp(96px,28vw,132px);height:clamp(96px,28vw,132px);border-width:6px}
+ .equity-ring:before{inset:-10px}
+ .equity-ring small{font-size:9px}
+ .equity-ring strong{font-size:clamp(15px,4.3vw,20px)}
+ .equity-ring span{font-size:9px}
+ .right-metrics{gap:12px}
+ .right-metric{gap:6px}
+ .right-metric .metric-icon{width:30px;height:30px;font-size:15px}
+ .right-metric small{font-size:8px}
+ .right-metric b{font-size:14px}
+ .markets{gap:8px;margin:10px 0}
+ .market{gap:7px;padding:8px 7px;border-radius:13px}
+ .asset-icon{width:35px;height:35px}
+ .asset-icon svg{width:29px;height:29px}
+ .market-title{font-size:10px;gap:5px}
+ .timeframe{font-size:8px;padding:2px 5px}
+ .market-price{font-size:14px}
+ .market-change{font-size:9px;margin-left:2px}
+ .spark{min-width:30px!important;width:21%;height:26px}
+ .chart-panel,.positions{border-radius:16px;margin-bottom:11px}
+ .panel-head{padding:10px 10px}
+ .chart-heading{gap:7px}
+ .chart-symbol-icon{width:31px;height:29px;font-size:17px}
+ .chart-heading strong{font-size:12px}
+ .chart-heading select{font-size:10px;padding:4px 7px}
+ .live-pill{font-size:9px;padding:5px 8px}
+ .expand{font-size:17px}
+ .chart-meta{padding:8px 11px 1px;font-size:9px;line-height:1.8;white-space:nowrap;overflow:hidden}
+ .chart-wrap{height:clamp(275px,78vw,330px);padding:0 2px 4px}
+ .positions .panel-head{padding:9px 10px}
+ .positions-title{font-size:11px;gap:7px}
+ .positions-title svg{width:25px;height:25px}
+ .position-count{font-size:8px}
+ .position-table{width:100%;min-width:0;table-layout:fixed}
+ .position-table th{padding:8px 2px;font-size:7px;letter-spacing:-.2px}
+ .position-table td{padding:9px 2px;font-size:8px;letter-spacing:-.25px}
+ .position-table th:nth-child(1){width:19%}
+ .position-table th:nth-child(2){width:10%}
+ .position-table th:nth-child(3){width:8%}
+ .position-table th:nth-child(4){width:14%}
+ .position-table th:nth-child(5){width:14%}
+ .position-table th:nth-child(6){width:13%}
+ .position-table th:nth-child(7){width:22%}
+ .position-symbol{gap:4px;font-size:8px}
+ .position-symbol .asset-icon{width:24px;height:24px}
+ .position-symbol .asset-icon svg{width:19px;height:19px}
+ .side{font-size:7px;padding:4px 5px}
+ .levels-cell{font-size:7px!important;line-height:1.8;letter-spacing:-.3px}
+ .insights{grid-template-columns:1fr;gap:9px;margin-bottom:12px}
+ .insight{padding:11px 12px;border-radius:14px}
+ .insight-head{gap:8px;padding-bottom:8px}
+ .insight-icon{width:32px;height:32px;font-size:17px}
+ .insight-head strong{font-size:11px}
+ .view{font-size:10px}
+ .monitor-row{font-size:10px;margin:8px 0 5px}
+ .insight p{font-size:10px;line-height:1.55}
+ .brain-orbit{width:58px;height:58px;font-size:24px}
+ .news-item{font-size:10px;padding:7px 0}
+ .news-item small{font-size:9px}
+ .bottom-nav{margin:12px -2px 0;padding:8px 3px 7px;border-radius:18px}
+ .bottom-nav button{font-size:9px;gap:4px}
+ .bottom-nav button svg{width:22px;height:22px}
+ .bottom-nav button.active:after{bottom:-7px;height:3px}
+}
+@media(max-width:380px){
+ .identity{padding-left:8px;padding-right:8px}
+ .tier-icon{width:37px;height:37px}
+ .license{font-size:8px;padding:6px}
+ .trading-state{padding-left:6px}
+ .trading-state b,.trading-state small{font-size:7px}
+ .account{padding-left:6px;padding-right:6px}
+ .metric-label{font-size:8px}
+ .metric-value{font-size:15px}
+ .metric-change{font-size:7px}
+ .right-metric small{font-size:7px}
+ .right-metric b{font-size:13px}
+ .position-table th{font-size:6.5px}
+ .position-table td{font-size:7px}
+ .position-symbol{font-size:7px}
+ .levels-cell{font-size:6.5px!important}
+}
+@media(prefers-reduced-motion:reduce){.bottom-nav button.active:after{box-shadow:none}}
