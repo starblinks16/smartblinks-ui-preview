@@ -134,3 +134,15 @@
 
 .tier-icon svg{width:29px;height:29px;display:block}.metric-icon svg{width:19px;height:19px;display:block}.insight-icon svg{width:22px;height:22px;display:block}.brain-orbit svg{width:44px;height:44px;display:block}
 @media(max-width:700px){.tier-icon svg{width:23px;height:23px}.metric-icon svg{width:16px;height:16px}.insight-icon svg{width:19px;height:19px}.brain-orbit svg{width:34px;height:34px}}
+
+/* Restrained dimensional finish for the approved five-item navigation. */
+.bottom-nav{position:sticky;bottom:calc(7px + var(--safe-bottom));z-index:20;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;margin:16px -7px 0;padding:9px 8px;border:1px solid #343a43;border-radius:25px;background:linear-gradient(180deg,#171a20 0%,#0b0e13 100%);box-shadow:0 14px 30px #000a,0 3px 0 #05070a,inset 0 1px 0 #ffffff18,inset 0 -2px 5px #000b;backdrop-filter:blur(18px)}
+.bottom-nav button{position:relative;isolation:isolate;min-width:0;min-height:76px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:8px 2px;border:1px solid transparent;border-radius:19px;background:transparent;color:#a2a5ad;font-size:clamp(10px,2.7vw,13px);font-weight:500;transition:background .18s ease,transform .18s ease,color .18s ease,box-shadow .18s ease}
+.bottom-nav button svg{width:29px;height:29px;overflow:visible;fill:none;stroke:currentColor;stroke-width:2.15;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 1px #000)}
+.bottom-nav button span{white-space:nowrap}
+.bottom-nav button.active{color:#f5f7fb;border-color:#343942;background:linear-gradient(155deg,#30343b 0%,#202329 52%,#171a20 100%);box-shadow:0 5px 10px #0008,inset 0 1px 0 #ffffff20,inset 0 -3px 5px #0008;text-shadow:0 1px 1px #000}
+.bottom-nav button.active:after{display:none}
+.bottom-nav button:not(.active):active{transform:translateY(1px)}
+.bottom-nav .ai-trade-tab .ai-trade-dot{fill:#9bea13;stroke:#9bea13;stroke-width:1;filter:drop-shadow(0 0 4px #8bdc00aa)}
+@media(max-width:700px){.bottom-nav{position:sticky;bottom:calc(5px + var(--safe-bottom));margin:13px -1px 0;padding:7px 6px;border-radius:22px;gap:2px}.bottom-nav button{min-height:68px;padding:7px 1px;border-radius:17px;font-size:clamp(9px,2.65vw,12px);gap:4px}.bottom-nav button svg{width:27px;height:27px}}
+@media(max-width:360px){.bottom-nav{padding:6px 4px;gap:1px}.bottom-nav button{min-height:64px;font-size:8px}.bottom-nav button svg{width:24px;height:24px}}
